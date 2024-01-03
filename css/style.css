@@ -1,0 +1,403 @@
+@charset "utf-8";
+
+:root {
+  --primary: #454545;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100vh;
+  color: var(--primary);
+  font-family: "Hind", "Nanum Gothic", "Noto Sans KR", sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+body {
+  background: #fff;
+  position: relative;
+}
+
+/* header */
+.header {
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+  height: 76px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 65px;
+  background: #fff;
+}
+
+.flex {
+  display: flex;
+}
+
+.logo,
+.logo img {
+  width: 120px;
+}
+
+nav,
+.util ul {
+  font-size: 0;
+}
+
+nav {
+  height: 60px;
+  margin-left: 60px;
+}
+
+nav::after {
+  z-index: -2;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 71px;
+  width: 100%;
+  height: 0;
+  background: #fff;
+  transition: all 0.5s;
+}
+
+nav.active:after {
+  height: 150px;
+}
+
+.menu {
+  display: inline-block;
+  height: 60px;
+  line-height: 60px;
+  padding: 0 20px;
+}
+
+.menu a {
+  color: #2d2d2d;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.depth {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 150px;
+}
+
+.depth li {
+  line-height: 25px;
+}
+
+.depth li a {
+  display: block;
+  color: #969696;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+.menu:hover .depth {
+  background: #fff;
+}
+
+/* util */
+.util ul li {
+  position: relative;
+  display: inline-block;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  padding-right: 25px;
+  color: #7e6056;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+.util ul li:hover {
+  opacity: 0.7;
+}
+
+.util ul li a img {
+  width: 14px;
+  height: 14px;
+  margin-right: 5px;
+}
+
+.hamburger_icon {
+  position: absolute;
+  right: 50px;
+  cursor: pointer;
+}
+
+.hamburger::before,
+.hamburger::after,
+.hamburger_inner::after {
+  position: absolute;
+  content: "";
+  width: 22px;
+  height: 1px;
+  background: #7e6056;
+}
+
+.hamburger::before {
+  top: -14px;
+}
+
+.hamburger_inner::after {
+  bottom: 7px;
+}
+
+.hamburger::after {
+  bottom: 0px;
+}
+
+.hamburger_icon.on::after {
+  content: "\e921";
+}
+
+.custom {
+  width: 100%;
+  height: 840px;
+  margin-top: 20px;
+  background: #f5f3f2;
+}
+
+.custom_wrap {
+  justify-content: center;
+  align-items: center;
+}
+
+.custom_wrap .demo {
+  width: 500px;
+  height: 500px;
+  margin-top: 90px;
+}
+
+.custom_wrap .demo img {
+  width: 100%;
+  height: auto;
+}
+
+.title {
+  width: 100%;
+  max-width: 640px;
+  margin: 50px auto;
+}
+
+.title p {
+  color: #7e6056;
+  font-size: 15px;
+}
+
+.custom_button a,
+.collection_button a,
+.mobile_button a,
+.sample_button a {
+  position: relative;
+  display: block;
+  width: 170px;
+  height: 60px;
+  line-height: 80px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #7e6056;
+  border-bottom: 1px solid #7e6056;
+  transition: border-color 0.25s ease-out;
+}
+
+.custom_button svg,
+.collection_button svg,
+.ourhours_button svg,
+.mobile_button svg,
+.sample_button svg {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 29px;
+  left: 150px;
+}
+
+.collection {
+  height: 840px;
+  margin-top: 20px;
+  background: #efeae9;
+}
+
+.collection_image {
+  height: 600px;
+  background: url(../images/collection-loop.jpg) repeat-x;
+  background-size: 3575px 500px;
+  background-position-y: 90px;
+  animation: collectionLoop 300s linear infinite;
+}
+
+@keyframes collectionLoop {
+  0% {
+    background-position-x: 0;
+  }
+
+  100% {
+    background-position-x: -3575px;
+  }
+}
+
+.ourhours {
+  position: relative;
+  height: 840px;
+  margin-top: 20px;
+  background: url(../images/ourhours.jpg) center bottom;
+  background-size: cover;
+}
+
+.ourhours_title {
+  position: absolute;
+  width: 100%;
+  max-width: 640px;
+  bottom: 90px;
+  left: 33%;
+  color: #fff;
+}
+
+.ourhours_title p,
+.moblie_title p,
+.sample_title p {
+  font-size: 15px;
+}
+
+.ourhours_button a {
+  position: relative;
+  display: block;
+  width: 170px;
+  height: 60px;
+  line-height: 80px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  border-bottom: 1px solid #fff;
+  transition: border-color 0.25s ease-out;
+}
+
+.mobile_sample {
+  margin-top: 20px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.mobile,
+.sample {
+  width: 50%;
+  background: #f1f1f1;
+}
+
+.moblie_content {
+  position: relative;
+  height: 760px;
+  background: url(../images/mobile-cards-bg.jpg) center top no-repeat;
+  background-size: 900px 600px;
+}
+
+.moblie_title {
+  position: absolute;
+  max-width: 640px;
+  bottom: 90px;
+  left: 33%;
+  color: #7e6056;
+}
+
+.sample_content {
+  position: relative;
+  width: 100%;
+  height: 760px;
+  background: url(../images/sample-package-bg.jpg) center bottom no-repeat;
+  background-size: cover;
+}
+
+.sample_title {
+  position: absolute;
+  max-width: 640px;
+  top: 100px;
+  left: 33%;
+  color: #7e6056;
+}
+
+/* footer */
+footer {
+  width: 100%;
+  height: 232px;
+  margin-top: 20px;
+  padding: 60px 0;
+  color: #7e6056;
+  font-size: 11px;
+  border-top: 1px solid rgba(126, 96, 86, 0.5);
+  transition: color 0.3s ease-in-out;
+}
+
+address {
+  max-width: 1430px;
+  margin: auto;
+  padding: 0 65px;
+}
+
+.info {
+  float: left;
+  width: 90%;
+}
+
+.info ul {
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.info ul li {
+  display: inline-block;
+  padding-right: 10px;
+}
+
+.info p {
+  font-size: 10px;
+  padding-bottom: 20px;
+}
+
+.info .support {
+  margin-bottom: 60px;
+}
+
+.info ul:first-child::after {
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: 10px;
+  top: 2px;
+  left: 226px;
+  background: #7e6056;
+}
+
+.info ul:nth-child(2):after {
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: 10px;
+  top: 2px;
+  left: 88px;
+  background: #7e6056;
+}
+
+.info ul:last-child::after {
+  position: absolute;
+  content: "";
+  width: 1px;
+  height: 10px;
+  top: 2px;
+  left: 395px;
+  background: #7e6056;
+}
+
+.sns {
+  float: right;
+  text-transform: uppercase;
+}

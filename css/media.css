@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+@media (min-width: 500px) and (max-width: 1023px) {
+  /* 최소 768px, 최대 1023px */
+  .header .logo {
+    margin: 0 0 10px -35px;
+  }
+  nav,
+  .util {
+    display: none;
+  }
+  .navi {
+    float: left;
+    width: calc(100% - 170px);
+    border-top: 1px solid #7e6056;
+    margin: 27px 0 0 25px;
+  }
+
+  .hamburger_icon {
+    display: block;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1171px) {
+  /* 최소 768px, 최대 1023px */
+  .util {
+    display: none;
+  }
+  .hamburger_icon {
+    display: none;
+  }
+}
+
+@media (min-width: 1172px) and (max-width: 5000px) {
+  /* 최소 768px, 최대 1023px */
+  .util {
+    display: block;
+  }
+  .hamburger_icon {
+    display: none;
+  }
+}
